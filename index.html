@@ -4,18 +4,72 @@
     <meta charset="UTF-8">
     <title>HTML Code Vorschau</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        textarea { width: 100%; height: 200px; }
-        iframe { width: 100%; height: 300px; border: 1px solid #ccc; margin-top: 10px; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #7d9aac;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 1rem;
+            resize: vertical;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #7d9aac;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+        }
+        footer a {
+            text-decoration: none;
+            color: inherit;
+        }
     </style>
 </head>
 <body>
-    <h1>HTML Code Vorschau</h1>
-    <textarea id="code" placeholder="Füge hier deinen HTML-Code ein..."></textarea>
-    <br>
-    <button onclick="updatePreview()">Vorschau anzeigen</button>
-    <iframe id="preview"></iframe>
-
+    <div class="container">
+        <h1>HTML Code Vorschau</h1>
+        <textarea id="code" placeholder="Füge hier deinen HTML-Code ein..."></textarea>
+        <br>
+        <button onclick="updatePreview()">Vorschau anzeigen</button>
+        <iframe id="preview" tabindex="0"></iframe>
+    </div>
+    <footer>
+        <p>&copy; 2025 Raffael Bauer. Alle Rechte vorbehalten.</p>
+        <p>
+            <a href="https://raffaelbauer.github.io/Impressum/">Impressum</a> | 
+            <a href="https://raffaelbauer.github.io/Datenschutzbestimmungen/">Datenschutzbestimmungen</a>
+        </p>
+    </footer>
     <script>
         function updatePreview() {
             var code = document.getElementById('code').value;
@@ -24,15 +78,9 @@
             doc.open();
             doc.write(code);
             doc.close();
+            iframe.style.display = 'block';
+            iframe.focus();
         }
     </script>
-
-    <footer>
-        <p>&copy; 2025 Raffael Bauer. Alle Rechte vorbehalten.</p>
-        <p>
-            <a href="https://raffaelbauer.github.io/Impressum/">Impressum</a> | 
-            <a href="https://raffaelbauer.github.io/Datenschutzbestimmungen/">Datenschutzbestimmungen</a>
-        </p>
-    </footer>
 </body>
 </html>

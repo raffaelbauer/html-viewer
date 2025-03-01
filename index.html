@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Code Vorschau</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        textarea { width: 100%; height: 200px; }
+        #preview { border: 1px solid #ccc; padding: 10px; margin-top: 10px; }
+        button { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>HTML Code Vorschau</h1>
+    <textarea id="code" placeholder="Füge hier deinen HTML-Code ein..."></textarea>
+    <br>
+    <button onclick="updatePreview()">Vorschau anzeigen</button>
+    <div id="preview"></div>
+
+    <script>
+        function updatePreview() {
+            var code = document.getElementById('code').value;
+            document.getElementById('preview').innerHTML = code;
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Raffael Bauer. Alle Rechte vorbehalten.</p>
+        <p>
+            <a href="https://raffaelbauer.github.io/Impressum/">Impressum</a> | 
+            <a href="https://raffaelbauer.github.io/Datenschutzbestimmungen/">Datenschutzbestimmungen</a>
+        </p>
+    </footer>
+</body>
+</html>
